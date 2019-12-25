@@ -15,6 +15,14 @@ Step 1 : install docker compose
 
    2. Using PIP
     pip install -U docker-compose
+    
+    There can be some problems while checking the version of docker-compose due to broken pip.
+    In order to fix the issue ending "AttributeError: 'module' object has no attribute 'SSL_ST_INIT' " 
+    , run the following commands:
+         rm -rf /usr/lib/python2.7/dist-packages/OpenSSL
+         rm -rf /usr/lib/python2.7/dist-packages/pyOpenSSL-0.15.1.egg-info
+         sudo pip install pyopenssl
+     After running this, check the version of docker-compose .
 
 Step 2 : Create docker compose file at any location on your system
    docker-compose.yml
